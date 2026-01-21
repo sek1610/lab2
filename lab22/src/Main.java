@@ -1,15 +1,90 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+package labs.lab2;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+public class Main {
+
+    public static class Calculator {
+
+        public int Plus(int a, int b) {
+            return a+b;
         }
+
+        public double Plus(double a, double b) {
+            return a+b;
+        }
+
+        public long Plus(long a, long b) {
+            return a+b;
+        }
+
+        public int Minus(int a, int b) {
+            return a-b;
+        }
+
+        public double Minus(double a, double b) {
+            return a-b;
+        }
+
+        public long Minus(long a, long b) {
+            return a-b;
+        }
+
+        public double Divide(double a, double b) {
+            return a/b;
+        }
+
+        public int Multiple(int a, int b) {
+            return a*b;
+        }
+
+        public double Multiple(double a, double b) {
+            return a*b;
+        }
+
+        public long Multiple(long a, long b) {
+            return a*b;
+        }
+
     }
+
+    public static class Weather {
+        private String Day_of_the_week;
+        private Integer temperature;
+        private Integer wetness;
+        private Integer pressure;
+        private Boolean rainfall;
+
+        public Weather() {
+            Day_of_the_week = "Понедельник";
+            temperature = 20;
+            rainfall = false;
+        }
+
+        public Weather(String Day_of_the_week, Integer temperature, Boolean rainfall, Integer wetness, Integer pressure) {
+            this.Day_of_the_week = Day_of_the_week;
+            this.temperature = temperature;
+            this.wetness = wetness;
+            this.pressure = pressure;
+            this.rainfall = rainfall;
+        }
+
+        public void info() {
+            System.out.println(Day_of_the_week + " " + temperature + " градусов " + "Осадки " + rainfall);
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("Задание 1");
+        Calculator Calculator = new Calculator();
+        double result1 = Calculator.Divide(5, 3);
+        System.out.println("Результат=" + result1);
+        System.out.println("===================");
+        System.out.println("Задание 2");
+        Weather day1 = new Weather("Вторник", 10, true, 10, 10);
+        day1.info();
+        System.out.println("===================");
+
+    }
+
 }
